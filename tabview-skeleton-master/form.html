@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" >
+
+    <title>Hello, world!</title>
+  </head>
+   <body>
+     <div class="container">
+        <div>
+        	<form>
+        		<div class="form-group col-md-10">
+        			<label for="produto">Produto</label>
+        			<input type="text" class="form-control" id="produto" name="produto"
+        			arial-describedby="produtohelp" placeholder="nome do produto">	
+        			<small id="produtohelp" class="form-text text-muted">Você deve digitar o nome do produto com todas as letras minúsculas.</small>
+        		</div>
+        		<div class="form-group col-md-10">
+        			<label for="preco">Preço</label>
+        			<input type="number" step="any" class="form-control" id="preco" name="preco"
+        			arial-describedby="precohelp" placeholder="digite o preco">	
+        			<small id="precohelp" class="form-text text-muted">Você deve digitar o nome do produto com todas as letras minúsculas.</small>
+        		</div>
+        		<div class="form-group col-md-10">
+        			<label for="preco">Marca</label>
+        			<select class="form-control" id="marca" name="marca"
+        			arial-describedby="marcahelp"></select>	
+        			<small id="marcahelp" class="form-text text-muted">Você deve digitar o nome do produto com todas as letras minúsculas.</small>
+        		</div>
+        		<div class="col-md-10">
+        		<button type="submit" class="btn btn-success">Salvar</button>
+        		<button type="submit" class="btn btn-danger">Cancelar</button>
+        		</div>
+        	</form>
+        </div>
+    </div>
+    
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="bootstrap/js/jquery-3.3.1.slim.min.js" ></script>
+    <script src="bootstrap/js/popper.min.js" ></script>
+    <script src="bootstrap/js/bootstrap.min.js" ></script>
+    <script src='data/products.js'></script>
+
+    <script>
+
+    	const dbMarca=[
+    	{
+    	id: '1',
+    	name: 'Samsung'
+    },
+    {
+    	id:'2',
+    	name:'dell'
+    },
+    {
+		id:'3',
+		name:'CCE'
+    }
+    	]
+
+    const selectMarca=document.getElementById('marca');
+    dbMarca.map((db)=>{
+    	let opt=`<option value="${db.id}">${db.name}</option>`;
+    	selectMarca.innerHTML +=opt;
+    }).join('')
+    
+    </script>
+  </body>
+</html>
